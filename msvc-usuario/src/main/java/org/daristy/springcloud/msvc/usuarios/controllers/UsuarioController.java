@@ -2,6 +2,7 @@ package org.daristy.springcloud.msvc.usuarios.controllers;
 
 import org.daristy.springcloud.msvc.usuarios.models.entity.Usuario;
 import org.daristy.springcloud.msvc.usuarios.services.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,14 +11,12 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("usuario")
+@RequestMapping("usuarios")
 public class UsuarioController {
 
-    private final UsuarioService service;
+    @Autowired
+    private UsuarioService service;
 
-    public UsuarioController(UsuarioService service) {
-        this.service = service;
-    }
 
     @GetMapping
     public List<Usuario> listar(){

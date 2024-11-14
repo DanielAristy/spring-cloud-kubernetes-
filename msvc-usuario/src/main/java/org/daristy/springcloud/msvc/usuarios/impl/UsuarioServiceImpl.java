@@ -11,14 +11,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-
 public class UsuarioServiceImpl implements UsuarioService {
     @Autowired
-    private final UsuarioRepository repository;
+    private UsuarioRepository repository;
 
-    public UsuarioServiceImpl(UsuarioRepository repository) {
-        this.repository = repository;
-    }
 
     @Override
     @Transactional(readOnly = true)
